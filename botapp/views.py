@@ -16,13 +16,6 @@ VERIFY_TOKEN = "2318934571"
 
 my_api_key = "AIzaSyBF_TsL1lsW2R-rMMfLj_Iqw2_UVowKX1A"
 my_cse_id = "011451716192923071187:sqtrnpnxrgm"
-jokes = { 'hello': ["""Yo' Mama is so stupid, she needs a recipe to make ice cubes.""",
-                     """Yo' Mama is so stupid, she thinks DNA is the National Dyslexics Association."""],
-         'hi':      ["""Yo' Mama is so fat, when she goes to a restaurant, instead of a menu, she gets an estimate.""",
-                      """ Yo' Mama is so fat, when the cops see her on a street corner, they yell, "Hey you guys, break it up!" """],
-         'hey there': ["""Yo' Mama is so dumb, when God was giving out brains, she thought they were milkshakes and asked for extra thick.""",
-                  """Yo' Mama is so dumb, she locked her keys inside her motorcycle."""]
-              }
 
 
 class LearnerBotView(generic.View):
@@ -49,7 +42,7 @@ class LearnerBotView(generic.View):
                 if 'message' in message:
                     # Print the message to the terminal
                     # pprint(message)
-                    
+
                     message_text_length = len(message['message']['text'].split(' '))
                     if message_text_length > 1:
                         post_facebook_message_google_search(message['sender']['id'], message['message']['text'])
